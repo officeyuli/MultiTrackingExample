@@ -1,14 +1,8 @@
 package com.beanfun.multitrackingexample;
 
 import android.os.Bundle;
-
-import com.appsflyer.AppsFlyerLib;
-import com.facebook.appevents.AppEventsConstants;
-import com.facebook.internal.Logger;
-import com.google.android.material.snackbar.Snackbar;
-
-import androidx.appcompat.app.AppCompatActivity;
-
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 
 import androidx.navigation.NavController;
@@ -16,20 +10,14 @@ import androidx.navigation.Navigation;
 import androidx.navigation.ui.AppBarConfiguration;
 import androidx.navigation.ui.NavigationUI;
 
-import com.beanfun.multitrackingexample.databinding.ActivityMainBinding;
-import com.google.firebase.analytics.FirebaseAnalytics;
-
-import android.view.Menu;
-import android.view.MenuItem;
-
 import com.appsflyer.AFInAppEventParameterName;
-import com.appsflyer.AFInAppEventType;
+import com.appsflyer.AppsFlyerLib;
+import com.beanfun.multitrackingexample.databinding.ActivityMainBinding;
+import com.google.android.material.snackbar.Snackbar;
 
 import java.util.HashMap;
 import java.util.Map;
 
-import com.facebook.FacebookSdk;
-import com.facebook.appevents.AppEventsLogger;
 public class MainActivity extends BaseActivity {
 
     private AppBarConfiguration appBarConfiguration;
@@ -75,11 +63,11 @@ public class MainActivity extends BaseActivity {
 //        eventValues.put("appsFlyer_tracking_params", "userAppsFlyer");
 //        AppsFlyerLib.getInstance().logEvent(getApplicationContext(),"APPSFLYER_TRACKING",eventValues);
         Map<String, Object> eventValue = new HashMap<>();
-        eventValue.put(AFInAppEventParameterName.REVENUE,-200);
-        eventValue.put(AFInAppEventParameterName.CONTENT_TYPE,"shoes");
-        eventValue.put(AFInAppEventParameterName.CONTENT_ID,"4875");
-        eventValue.put(AFInAppEventParameterName.CURRENCY,"USD");
-        AppsFlyerLib.getInstance().logEvent(getApplicationContext() , "cancel_purchase" , eventValue);
+        eventValue.put(AFInAppEventParameterName.REVENUE, -200);
+        eventValue.put(AFInAppEventParameterName.CONTENT_TYPE, "shoes");
+        eventValue.put(AFInAppEventParameterName.CONTENT_ID, "4875");
+        eventValue.put(AFInAppEventParameterName.CURRENCY, "USD");
+        AppsFlyerLib.getInstance().logEvent(getApplicationContext(), "cancel_purchase", eventValue);
     }
 
     private void insertGTMTracking() {

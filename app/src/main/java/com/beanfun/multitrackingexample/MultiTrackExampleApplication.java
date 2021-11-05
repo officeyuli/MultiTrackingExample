@@ -68,7 +68,7 @@ public class MultiTrackExampleApplication extends Application {
 
     public AppEventsLogger getPixelLogger() {
         if (pixelLogger == null) {
-            pixelLogger =  AppEventsLogger.newLogger(this);
+            pixelLogger = AppEventsLogger.newLogger(this);
         }
         return pixelLogger;
     }
